@@ -13,6 +13,7 @@
 		C12D37322A51A368006DA52B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C12D37302A51A368006DA52B /* Main.storyboard */; };
 		C12D37342A51A369006DA52B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C12D37332A51A369006DA52B /* Assets.xcassets */; };
 		C12D37372A51A369006DA52B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C12D37352A51A369006DA52B /* LaunchScreen.storyboard */; };
+		C12D37452A51A410006DA52B /* ControlStripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12D37432A51A410006DA52B /* ControlStripView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C12D37332A51A369006DA52B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C12D37362A51A369006DA52B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C12D37382A51A369006DA52B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C12D37432A51A410006DA52B /* ControlStripView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlStripView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,8 @@
 		C12D37292A51A368006DA52B /* ControlStripView */ = {
 			isa = PBXGroup;
 			children = (
+				C12D37412A51A410006DA52B /* Sources */,
+				C12D373E2A51A40F006DA52B /* Tests */,
 				C12D372A2A51A368006DA52B /* AppDelegate.swift */,
 				C12D372C2A51A368006DA52B /* SceneDelegate.swift */,
 				C12D372E2A51A368006DA52B /* ViewController.swift */,
@@ -63,6 +67,37 @@
 				C12D37332A51A369006DA52B /* Assets.xcassets */,
 				C12D37352A51A369006DA52B /* LaunchScreen.storyboard */,
 				C12D37382A51A369006DA52B /* Info.plist */,
+			);
+			path = ControlStripView;
+			sourceTree = "<group>";
+		};
+		C12D373E2A51A40F006DA52B /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				C12D373F2A51A40F006DA52B /* ControlStripViewTests */,
+			);
+			path = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		C12D373F2A51A40F006DA52B /* ControlStripViewTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ControlStripViewTests;
+			sourceTree = "<group>";
+		};
+		C12D37412A51A410006DA52B /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C12D37422A51A410006DA52B /* ControlStripView */,
+			);
+			path = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		C12D37422A51A410006DA52B /* ControlStripView */ = {
+			isa = PBXGroup;
+			children = (
+				C12D37432A51A410006DA52B /* ControlStripView.swift */,
 			);
 			path = ControlStripView;
 			sourceTree = "<group>";
@@ -141,6 +176,7 @@
 				C12D372F2A51A368006DA52B /* ViewController.swift in Sources */,
 				C12D372B2A51A368006DA52B /* AppDelegate.swift in Sources */,
 				C12D372D2A51A368006DA52B /* SceneDelegate.swift in Sources */,
+				C12D37452A51A410006DA52B /* ControlStripView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
