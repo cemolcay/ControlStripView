@@ -11,7 +11,7 @@ Otherwise, it lays out the items with an equal spacing.
 Demo 
 ---
 
-![alt tag](https://github.com/cemolcay/ControlStripView/demo.gif)
+![alt tag](demo.gif)
 
 Install
 ---
