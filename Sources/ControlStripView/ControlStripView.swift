@@ -8,7 +8,7 @@ public class ControlStripView: UIScrollView {
     private let stackView = UIStackView()
     private var items: [UIView] = []
     
-    var axis: NSLayoutConstraint.Axis = .horizontal {
+    public var axis: NSLayoutConstraint.Axis = .horizontal {
         didSet {
             stackView.axis = axis
             setNeedsLayout()
