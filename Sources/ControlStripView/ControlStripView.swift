@@ -8,8 +8,16 @@ public class ControlStripView: UIScrollView {
     private let stackView = UIStackView()
     private var items: [UIView] = []
     
-    public init() {
+    var axis: NSLayoutConstraint.Axis = .horizontal {
+        didSet {
+            stackView.axis = axis
+            setNeedsLayout()
+        }
+    }
+    
+    public init(axis: NSLayoutConstraint.Axis = .horizontal) {
         super.init(frame: .zero)
+        self.axis = axis
         commonInit()
     }
     
@@ -19,7 +27,7 @@ public class ControlStripView: UIScrollView {
     }
     
     private func commonInit() {
-        stackView.axis = .horizontal
+        stackView.axis = axis
         stackView.alignment = .fill
         stackView.distribution = .fill
         addSubview(stackView)
@@ -56,17 +64,23 @@ public class ControlStripView: UIScrollView {
         super.layoutSubviews()
         guard !items.isEmpty else { return }
         
-        let itemsWidth = items.map({ $0.frame.size.width }).reduce(0, +)
+        let itemsSize = items.map({ axis == .horizontal ? $0.frame.size.width : $0.frame.size.height }).reduce(0, +)
         let itemsSpacing = CGFloat(items.count - 1) * spacing
-        let total = itemsWidth + itemsSpacing
+        let total = itemsSize + itemsSpacing
         
         // Scroll the items
         if frame.size.width < total {
-            contentSize.width = total
+            if axis == .horizontal {
+                contentSize.width = total
+                contentSize.height = frame.size.height
+            } else if axis == .vertical {
+                contentSize.width = frame.size.width
+                contentSize.height = total
+            }
             stackView.spacing = spacing
         } else { // layout with equal spacing
             contentSize.width = frame.size.width
-            let space = (frame.size.width - itemsWidth) / CGFloat(items.count - 1)
+            let space = (frame.size.width - itemsSize) / CGFloat(items.count - 1)
             stackView.spacing = space
         }
     }
