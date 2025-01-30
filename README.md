@@ -1,12 +1,11 @@
 ControlStripView
 ===
 
-A wrapper around UIScrollView + UIStackView for laying out multiple views horizontally with equal spacing. 
-
-It allows you to scroll the items automatically if the frame size is not enough. 
-
-Otherwise, it lays out the items with an equal spacing. 
-
+Layout the subviews  
+- Horizontally or vertically,   
+- Equally spaced if they consume less space then the strip view,  
+- Scrolling, with the specified spacing if they consume more space than the strip view.  
+- Center or hug the specified items on the strip view optionally.  
 
 Demo 
 ---
@@ -30,12 +29,21 @@ Create the view:
 ``` swift
 let strip = ControlStripView()
 ```
+  
+Create the items conforming `ControlStripViewItem` protocol:
+
+``` swift
+class ItemView: UIView, ControlStripViewItem {
+	var centerInStripView: Bool = false
+	var hugStripView: Bool = false
+}
+```
 
 Add views to the strip:
 
 ``` swift
-strip.addItem(view: cutoffKnob)
-strip.addItem(view: resonanceKnob)
+strip.addItem(cutoffKnob)
+strip.addItem(resonanceKnob)
 ```
 
 Example
